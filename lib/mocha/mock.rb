@@ -314,7 +314,7 @@ module Mocha
     end
 
     # @private
-    def respond_to?(symbol, include_private = false)
+    def respond_to_missing?(symbol, include_private = false)
       if @responder then
         if @responder.method(:respond_to?).arity > 1
           @responder.respond_to?(symbol, include_private)
